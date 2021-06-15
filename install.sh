@@ -40,3 +40,10 @@ echo -e "\033[31m [ - ]\033[0m set proxy to $proxy_loc"
 export https_proxy=$proxy_loc && export http_proxy=$proxy_loc
 
 # 安装oh-my-zsh
+echo -e "\033[31m[ * ]\033[0m ready to config zsh"
+zsh_config="/home/$USER/.oh-my-zsh"
+if [ -d ${zsh_config} ];then
+	echo -e "\033[31m [ - ]\033[0m oh-my-zsh already existed."
+else
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
